@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      {{#each this.ranking.firstObject.values as |head|}}
+        {{head.label}}
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.ranking as |row|}}
+      <tr>
+        <td>
+          <AreaGraph @data={{row.values}} />
+        </td>
+        <td>
+          <ScoreColor @score={{row.score}} />
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
