@@ -1,54 +1,20 @@
-<table>
-  <thead>
-    <tr>
-      {{#each-in model.firstObject as |key value|}}
-        <th>{{key}}</th>
-      {{/each-in}}
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |row|}}
-      <tr>
-        <td>
-          {{get row "No."}}
-        </td>
-        <td>
-          {{get row "Entidad"}}
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Portal Electrónico"}} @maxScore={{30}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Informe Anual"}} @maxScore={{5}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Resolver Inf Clasificada"}} @maxScore={{15}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Capacitación"}} @maxScore={{5}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Resolver Recursos"}} @maxScore={{15}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Solicitud de Información"}} @maxScore={{10}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Gratuidad"}} @maxScore={{5}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Transparencia activida (#29)"}} @maxScore={{5}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Organización UIP"}} @maxScore={{10}} />
-        </td>
-        <td>
-          <AreaGraph @score={{get row "Formatos editables"}} @maxScore={{5}} />
-        </td>
-        <td>
-          <ScoreColor @score={{get row "Nivel Cumplimiento"}} />
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<EmberTable as |t|>
+  <t.head @columns={{this.columns}} />
+  <t.body @rows={{model}} as |b|>
+    <b.row as |r|>
+      <r.cell as |value column row cellMeta columnMeta rowMeta|>
+        {{#if (is-equal column.name "Nivel Cumplimiento")}}
+          <ScoreColor @score={{value}}/>
+        {{else}}
+          <AreaGraph @score={{value}} @maxScore={{30}} />
+        {{/if}}
+      </r.cell>
+    </b.row>
+  </t.body>
+</EmberTable>
+
+<style>
+  td {
+    padding: 3px;
+  }
+</style>

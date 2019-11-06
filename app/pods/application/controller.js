@@ -1,43 +1,22 @@
 import Controller from '@ember/controller';
-import RowRanking from 'ranking/entity/row-ranking';
 
 class ApplicationController extends Controller {
   init() {
     super.init(...arguments);
-    this.ranking = [
-      RowRanking.create({
-        values: [
-          {
-            label: 'Label 1',
-            value: false
-          },
-          {
-            label: 'Label 2',
-            value: true
-          },
-          {
-            label: 'Label 3',
-            value: true
-          }
-        ]
-      }),
-      RowRanking.create({
-        values: [
-          {
-            label: 'Label 1',
-            value: false
-          },
-          {
-            label: 'Label 2',
-            value: false
-          },
-          {
-            label: 'Label 3',
-            value: true
-          }
-        ]
-      })
+    this.columns = [
+      { name: 'Portal Electrónico', valuePath: 'Portal Electrónico' },
+      { name: 'Informe Anual', valuePath: 'Informe Anual' },
+      { name: 'Resolver Inf Clasificada', valuePath: 'Resolver Inf Clasificada' },
+      { name: 'Capacitación', valuePath: 'Capacitación' },
+      { name: 'Resolver Recursos', valuePath: 'Resolver Recursos' },
+      { name: 'Solicitud de Información', valuePath: 'Solicitud de Información' },
+      { name: 'Gratuidad', valuePath: 'Gratuidad' },
+      { name: 'Transparencia activida (#29)', valuePath: 'Transparencia activida (#29)' },
+      { name: 'Organización UIP', valuePath: 'Organización UIP' },
+      { name: 'Formatos editables', valuePath: 'Formatos editables' },
+      { name: 'Nivel Cumplimiento', valuePath: 'Nivel Cumplimiento' }
     ];
+
   }
 }
 
