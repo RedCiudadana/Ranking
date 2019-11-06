@@ -13,7 +13,7 @@ describe('Integration | Component | area-graph', function() {
     // Handle any actions with this.on('myAction', function(val) { ... });
 
     this.render(hbs`<AreaGraph />`);
-    expect(this.$()).to.have.length(1);
+    expect(this.element).to.have.length(1);
 
     // Template block usage:
     this.render(hbs`
@@ -22,6 +22,6 @@ describe('Integration | Component | area-graph', function() {
       </AreaGraph>
     `);
 
-    expect(this.$().text().trim()).to.equal('template block text');
+    expect(this.element.text().trim()).to.equal('template block text');
   });
 });

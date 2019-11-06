@@ -8,8 +8,9 @@ export default class ScoreColorComponent extends Component {
 
   init() {
     super.init(...arguments);
+    this.percentage = 100 - parseInt(this.score);
     // green(120) to red(0)
-    this.set('color', utils.percentageToHsl(this.score, 120, 0));
-    this.set('scoreColorClass', `hls-${this.score}`);
+    this.set('color', utils.percentageToHsl(this.percentage, 120, 0));
+    this.set('scoreColorClass', `hls-${this.percentage}`);
   }
 }
