@@ -1,20 +1,34 @@
-<EmberTable as |t|>
-  <t.head @columns={{this.columns}} />
-  <t.body @rows={{model}} as |b|>
+<div class="demo-container">
+  <EmberTable as |t|>
+    <t.head
+      @columns={{this.columns}}
+      @sorts={{sorts}}
+
+      @onUpdateSorts={{action (mut sorts)}}
+
+      {{!-- @widthConstraint='gte-container'
+      @fillMode='first-column' --}}
+      @enableReorder={{false}}
+    />
+
+    <t.body @rows={{this.rows}} as |b|>
     <b.row as |r|>
-      <r.cell as |value column row cellMeta columnMeta rowMeta|>
-        {{#if (is-equal column.name "Nivel Cumplimiento")}}
-          <ScoreColor @score={{value}}/>
+      <r.cell as |value meta|>
+        {{#if (contains meta.valuePath this.scoreValuesPaths)}}
+          <div class="bg-{{if (eq value "SI") "green" "red"}}-500 w-full h-full">
+          </div>
+        {{else if (contains meta.valuePath this.gradientScoreValuesPaths)}}
+          {{log value}}
+          <ScoreColor
+            class="w-full h-full text-center font-bold text-gray-900"
+            @score={{value}}
+          />
         {{else}}
-          <AreaGraph @score={{value}} @maxScore={{30}} />
+          {{value}}
         {{/if}}
+
       </r.cell>
     </b.row>
   </t.body>
-</EmberTable>
-
-<style>
-  td {
-    padding: 3px;
-  }
-</style>
+  </EmberTable>
+</div>

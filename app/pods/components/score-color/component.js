@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import utils from 'ranking/utils';
 
 export default class ScoreColorComponent extends Component {
-  tagName = 'span';
+  tagName = 'div';
 
   classNameBindings = ['scoreColorClass'];
 
