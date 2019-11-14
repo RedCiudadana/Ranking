@@ -1,0 +1,34 @@
+<div class="demo-container">
+  <h1 class="text-3xl pb-8">{{get model.firstObject "Nombre Institución"}}</h1>
+  <EmberTable as |t|>
+    <t.head
+      @columns={{this.columns}}
+      @sorts={{sorts}}
+
+      @onUpdateSorts={{action (mut sorts)}}
+
+      {{!-- @widthConstraint='gte-container'
+      @fillMode='first-column' --}}
+      @enableReorder={{false}}
+    />
+
+    <t.body @rows={{model}} as |b|>
+      <b.row as |r|>
+        <r.cell as |value meta object|>
+          {{#if (contains meta.valuePath this.scoreValuesPaths)}}
+            <div class="bg-{{if (eq value "SI") "green" "red"}}-500 w-full h-full">
+            </div>
+          {{else if (contains meta.valuePath this.gradientScoreValuesPaths)}}
+            <ScoreColor
+              class="w-full h-full text-center font-bold text-gray-900"
+              @score={{value}}
+            />
+          {{else}}
+            {{value}}
+          {{/if}}
+
+        </r.cell>
+      </b.row>
+    </t.body>
+  </EmberTable>
+</div>

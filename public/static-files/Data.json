@@ -1,0 +1,53 @@
+[
+  {
+    "No": "1",
+    "Nombre Institución": "MINFIN",
+    "Descripción de Institución": "Descripción de ejemplo",
+    "Página Web": "https://example.com",
+    "Enlace de Datos": "https://example.com",
+    "Facebook": "https://example.com",
+    "Twitter": "https://example.com",
+    "Licencia Abierta": "SI",
+    "Formato abierto y legible por máquina": "SI",
+    "Disponible en una sola descarga": "SI",
+    "Datos actualizados": "SI",
+    "Disponible públicamente": "SI",
+    "Disponible sin cargo": "SI",
+    "Comentarios": "Lorem ipsum another ala ouruth orus largs cark fos vinch uplad fires gos.",
+    "Puntaje": "100%"
+  },
+  {
+    "No": "2",
+    "Nombre Institución": "MINGOB",
+    "Descripción de Institución": "Descripción de ejemplo",
+    "Página Web": "https://example.com",
+    "Enlace de Datos": "https://example.com",
+    "Facebook": "https://example.com",
+    "Twitter": "https://example.com",
+    "Licencia Abierta": "SI",
+    "Formato abierto y legible por máquina": "SI",
+    "Disponible en una sola descarga": "SI",
+    "Datos actualizados": "NO",
+    "Disponible públicamente": "NO",
+    "Disponible sin cargo": "NO",
+    "Comentarios": "Lorem ipsum another ala ouruth orus largs cark fos vinch uplad fires gos.",
+    "Puntaje": "50%"
+  },
+  {
+    "No": "3",
+    "Nombre Institución": "MSPAS",
+    "Descripción de Institución": "Descripción de ejemplo",
+    "Página Web": "https://example.com",
+    "Enlace de Datos": "https://example.com",
+    "Facebook": "https://example.com",
+    "Twitter": "https://example.com",
+    "Licencia Abierta": "NO",
+    "Formato abierto y legible por máquina": "NO",
+    "Disponible en una sola descarga": "NO",
+    "Datos actualizados": "NO",
+    "Disponible públicamente": "NO",
+    "Disponible sin cargo": "NO",
+    "Comentarios": "Lorem ipsum another ala ouruth orus largs cark fos vinch uplad fires gos.",
+    "Puntaje": "0%"
+  }
+]

@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('institution', { path: 'institucion/:id' });
 });
 
 export default Router;
