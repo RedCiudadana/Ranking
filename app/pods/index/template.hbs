@@ -24,12 +24,13 @@
               {{value}}
             </LinkTo>
           {{else if (contains meta.valuePath this.scoreValuesPaths)}}
-            <div class="bg-{{if (eq value "SI") "green" "red"}}-500 w-full h-full">
+            <div {{add-tippy meta.valuePath}} class="bg-{{if (eq value "SI") "green" "red"}}-500 w-full h-full">
             </div>
           {{else if (contains meta.valuePath this.gradientScoreValuesPaths)}}
             <ScoreColor
               class="w-full h-full text-center font-bold text-gray-900"
               @score={{value}}
+              @label={{meta.valuePath}}
             />
           {{else}}
             {{value}}
